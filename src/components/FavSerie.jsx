@@ -35,8 +35,8 @@ export function FavSerie() {
         return <p>Chargement en cours ...</p>
 
     return (
-        <div>
-            <h1>Series favorites :</h1>
+        <div className="favorites">
+            <h2>Series favorites :</h2>
             {series.length > 0 ? (
                 <ul>
                     {series.map((serie) => (

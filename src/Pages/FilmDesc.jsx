@@ -27,7 +27,7 @@ export function FilmDesc() {
         return <p>Chargement en cours ...</p>
 
     return (
-        <div>
+        <div className="descr">
             <h2>Description du film</h2>
             <img src={`https://image.tmdb.org/t/p/w300${film.poster_path}`} alt={film.title} />
             <h3>{film.title}</h3>

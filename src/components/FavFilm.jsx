@@ -35,8 +35,8 @@ export function FavFilm() {
         return <p>Chargement en cours ...</p>
 
     return (
-        <div>
-            <h1>Films favoris :</h1>
+        <div className="favorites">
+            <h2>Films favoris :</h2>
             {films.length > 0 ? (
                 <ul>
                     {films.map((film) => (

@@ -27,7 +27,7 @@ export function SerieDesc() {
         return <p>Chargement en cours ...</p>
 
     return (
-        <div>
+        <div className="descr">
             <h2>Description de la série</h2>
             <img src={`https://image.tmdb.org/t/p/w300${serie.poster_path}`} alt={serie.name} />
             <h3>{serie.name}</h3>

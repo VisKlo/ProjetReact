@@ -1,7 +1,7 @@
 import axios from "axios"
 import { Link } from "react-router-dom"
 import { useDispatch } from "react-redux"
-import { addFavSeries } from "../Features/favoriteSeries"
+import { addFavSeries } from "../components/Features/slices/favoriteSeries"
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 
@@ -32,8 +32,8 @@ export function Series() {
     return (
         <>
             <div>
-                <h2>Listes des séries</h2>
-                <ul className={"dflex"}>
+                <h2>Listes de séries</h2>
+                <ul className={"dflex liste"}>
                     {series.results.map((serie)  => (
                         <li key={serie.id}>
                             <Link key={serie.id} to={`/serie/${serie.id}`}>

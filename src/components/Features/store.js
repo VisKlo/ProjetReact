@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit"
-import favFilmsReducer from "../Features/favoriteFilms"
-import favSeriesReducer from "../Features/favoriteSeries"
-import tokenReducer from "../Features/token"
+import favFilmsReducer from "./slices/favoriteFilms"
+import favSeriesReducer from "./slices/favoriteSeries"
+import tokenReducer from "./slices/token"
 
 export const store = configureStore({
     reducer: {

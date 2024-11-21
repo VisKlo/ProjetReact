@@ -1,5 +1,5 @@
-import { FavFilm } from "./FavFilm"
-import { FavSerie } from "./FavSerie"
+import { FavFilm } from "../components/FavFilm"
+import { FavSerie } from "../components/FavSerie"
 
 export function Favorites() {
     return (

@@ -2,7 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { useDispatch } from "react-redux"
-import { addFavFilm } from "../Features/favoriteFilms"
+import { addFavFilm } from "../components/Features/slices/favoriteFilms"
 import { useSelector } from "react-redux"
 
 export function Films() {
@@ -33,7 +33,7 @@ export function Films() {
         <>
             <div>
                 <h2>Listes de films</h2>
-                <ul className={"dflex"}>
+                <ul className={"dflex liste"}>
                     {films.results.map((film)  => (
                         <li key={film.id}>
                             <Link key={film.id} to={`/film/${film.id}`}>
