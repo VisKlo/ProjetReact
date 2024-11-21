@@ -1,12 +1,13 @@
 import axios from "axios"
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
+import { useSelector } from "react-redux"
 
 export function SerieDesc() {
     const { serieId } = useParams()
     const [serie, setSerie] = useState(null)
     const [loading, setLoading] = useState(true)
-    const token = "4709a93217ceb21136419edae4b69f6b"
+    const token = useSelector((state) => state.token.value)
     
     useEffect(() => {
         const fetchData = async () => {

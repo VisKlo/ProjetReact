@@ -7,6 +7,7 @@ import { Films } from "./Pages/Films";
 import { Series } from "./Pages/Series";
 import { FilmDesc } from "./Pages/FilmDesc";
 import { SerieDesc } from "./Pages/SerieDesc";
+import { Favorites } from "./Pages/Favorites";
 
 export function App() {
     return (
@@ -19,6 +20,7 @@ export function App() {
                     <Route path="/film/:movieId" Component={FilmDesc} />
                     <Route path="/series" Component={Series} />
                     <Route path="/serie/:serieId" Component={SerieDesc} />
+                    <Route path="/favorites" Component={Favorites} />
                 </Routes>
             </BrowserRouter>
         </Provider>

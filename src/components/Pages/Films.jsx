@@ -1,13 +1,16 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import '../style.css'
 import { Link } from "react-router-dom"
+import { useDispatch } from "react-redux"
+import { addFavFilm } from "../Features/favoriteFilms"
+import { useSelector } from "react-redux"
 
 export function Films() {
     const [films, setFilms] = useState(null)
     const [page, setPage] = useState(1)
     const [loading, setLoading] = useState(true)
-    const token = "4709a93217ceb21136419edae4b69f6b"
+    const token = useSelector((state) => state.token.value)
+    const dispatch = useDispatch()
     
     useEffect(() => {
         const fetchData = async () => {
@@ -36,14 +39,14 @@ export function Films() {
                             <Link key={film.id} to={`/film/${film.id}`}>
                                 <img src={`https://image.tmdb.org/t/p/w300${film.poster_path}`} alt={film.title} />
                             </Link>
-                            <button>Favori</button>
+                            <button onClick={() => dispatch(addFavFilm(film.id))}>Favori</button>
                         </li>
                         
                     ))}
                 </ul>
             </div>
             <div className="pagination">
-            <button onClick={() => setPage(page - 1)} disabled={page === 1}>précédent</button>
+                <button onClick={() => setPage(page - 1)} disabled={page === 1}>précédent</button>
                 <button onClick={() => setPage(page+1)} disabled={page === films.total_pages}>suivant</button>
             </div>
         </>
