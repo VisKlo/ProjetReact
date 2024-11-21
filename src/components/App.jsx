@@ -11,7 +11,7 @@ import { SerieDesc } from "./Pages/SerieDesc";
 export function App() {
     return (
         <Provider store={store}>
-            <BrowserRouter>
+            <BrowserRouter basename="/reactTP/"  >
                 <Navbar />
                 <Routes>
                     <Route path="/" Component={HomePage} />

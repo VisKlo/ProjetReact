@@ -7,3 +7,8 @@ li {
     flex-wrap: wrap;
     justify-content: space-around;
 }
+
+.pagination {
+    display: flex;
+    
+}
