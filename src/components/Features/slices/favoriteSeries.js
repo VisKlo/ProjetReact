@@ -9,11 +9,8 @@ const favSeriesSlice = createSlice({
         addFavSeries: (state,action) => {
             state.arrSeries.push(action.payload)
         },
-        removeFavSeries: (state,action) => {
-            state.arrSeries.filter(item => item.id !== action.payload.id)
-        }
     }
 })
 
-export const { addFavSeries, removeFavSeries } = favSeriesSlice.actions
+export const { addFavSeries } = favSeriesSlice.actions
 export default favSeriesSlice.reducer

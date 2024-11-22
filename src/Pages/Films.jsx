@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { addFavFilm } from "../components/Features/slices/favoriteFilms"
 import { useSelector } from "react-redux"
+import { Pagination } from "../components/Pagination"
 
 export function Films() {
     const [films, setFilms] = useState(null)
@@ -41,14 +42,10 @@ export function Films() {
                             </Link>
                             <button onClick={() => dispatch(addFavFilm(film.id))}>Favori</button>
                         </li>
-                        
                     ))}
                 </ul>
             </div>
-            <div className="pagination">
-                <button onClick={() => setPage(page - 1)} disabled={page === 1}>précédent</button>
-                <button onClick={() => setPage(page+1)} disabled={page === films.total_pages}>suivant</button>
-            </div>
+            <Pagination page={page} totalPages={films.total_page} previous={() => setPage(page - 1)} next={() => setPage(page + 1)} />
         </>
         
     )

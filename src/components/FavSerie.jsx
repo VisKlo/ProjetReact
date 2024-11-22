@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux"
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 import axios from "axios"
 
 export function FavSerie() {
@@ -36,11 +37,13 @@ export function FavSerie() {
 
     return (
         <div className="favorites">
-            <h2>Series favorites :</h2>
+            <h2>Séries favorites :</h2>
             {series.length > 0 ? (
                 <ul>
                     {series.map((serie) => (
+                        <Link key={serie.id} to={`/serie/${serie.id}`}>
                         <li key={serie.id}>{serie.name}</li>
+                        </Link>
                     ))}
                 </ul>
             ) : (

@@ -21,7 +21,7 @@ export function FilmDesc() {
             }
         }
         fetchData()
-    }, [])
+    }, [movieId])
 
     if (loading)
         return <p>Chargement en cours ...</p>

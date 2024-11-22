@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux"
 import { addFavSeries } from "../components/Features/slices/favoriteSeries"
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
+import { Pagination } from "../components/Pagination"
 
 export function Series() {
     const [series, setSeries] = useState(null)
@@ -40,15 +41,11 @@ export function Series() {
                             <img src={`https://image.tmdb.org/t/p/w300${serie.poster_path}`} alt={serie.name} />
                             </Link>
                             <button onClick={() => dispatch(addFavSeries(serie.id))}>Favori</button>
-                            
                         </li>
                     ))}
                 </ul>
             </div>
-            <div className="pagination">
-                <button onClick={() => setPage(page - 1)} disabled={page === 1}>précédent</button>
-                <button onClick={() => setPage(page+1)} disabled={page === series.total_pages}>suivant</button>
-            </div>
+            <Pagination page={page} totalPages={series.total_page} previous={() => setPage(page - 1)} next={() => setPage(page + 1)}/>
         </>
     )
 }

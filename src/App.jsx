@@ -12,7 +12,7 @@ import { Favorites } from "./Pages/Favorites";
 export function App() {
     return (
         <Provider store={store}>
-            <BrowserRouter basename="/reactTP/"  >
+            <BrowserRouter basename="/reactTP/">
                 <Header />
                 <Routes>
                     <Route path="/" Component={HomePage} />

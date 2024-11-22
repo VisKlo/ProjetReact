@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux"
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 import axios from "axios"
 
 export function FavFilm() {
@@ -40,7 +41,9 @@ export function FavFilm() {
             {films.length > 0 ? (
                 <ul>
                     {films.map((film) => (
+                        <Link key={film.id} to={`/film/${film.id}`}>
                         <li key={film.id}>{film.title}</li>
+                        </Link>
                     ))}
                 </ul>
             ) : (
