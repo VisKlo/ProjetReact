@@ -41,7 +41,7 @@ export function FavFilm() {
             {films.length > 0 ? (
                 <ul>
                     {films.map((film) => (
-                        <Link key={film.id} to={`/film/${film.id}`}>
+                        <Link to={`/film/${film.id}`}>
                         <li key={film.id}>{film.title}</li>
                         </Link>
                     ))}

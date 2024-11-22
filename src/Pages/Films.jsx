@@ -37,7 +37,7 @@ export function Films() {
                 <ul className={"dflex liste"}>
                     {films.results.map((film)  => (
                         <li key={film.id}>
-                            <Link key={film.id} to={`/film/${film.id}`}>
+                            <Link to={`/film/${film.id}`}>
                                 <img src={`https://image.tmdb.org/t/p/w300${film.poster_path}`} alt={film.title} />
                             </Link>
                             <button onClick={() => dispatch(addFavFilm(film.id))}>Favori</button>
