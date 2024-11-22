@@ -34,7 +34,7 @@ export function SerieDesc() {
             <p>Genre(s) :</p>
             <ul>
                 {serie.genres.map((genre) => (
-                    <li>{ genre.name }</li>
+                    <li key={serie.name}>{ genre.name }</li>
                 ))}
             </ul>
             <p>{serie.overview}</p>

@@ -34,7 +34,7 @@ export function FilmDesc() {
             <p>Genre(s) :</p>
             <ul>
                 {film.genres.map((genre) => (
-                    <li>{ genre.name }</li>
+                    <li key={film.title}>{ genre.name }</li>
                 ))}
             </ul>
             <p>{film.overview}</p>
